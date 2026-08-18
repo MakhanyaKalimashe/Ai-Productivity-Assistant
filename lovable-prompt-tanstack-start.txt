@@ -1,0 +1,100 @@
+Build "Workmate AI" as a full-stack SaaS productivity dashboard using Lovable / TanStack Start. Do not build only a landing page — implement all five AI tools as working, interactive features with polished UI and clear navigation.
+
+CORE PRODUCT
+- App name: Workmate AI
+- Tagline: "Your AI-powered work companion"
+- Audience: professionals, freelancers, team leads
+- Tone: clean, trustworthy, efficient, modern SaaS
+
+TECH STACK & ARCHITECTURE
+- Framework: TanStack Start v1 with React 19 and file-based routing
+- Styling: Tailwind CSS v4 via src/styles.css with semantic theme tokens
+- Components: shadcn/ui primitives (Button, Card, Input, Textarea, Select, Sheet, Toast/Sonner)
+- State: TanStack Query for server-state; React useState/useReducer for local UI state
+- AI: createServerFn for future API calls; demo mode returns realistic mock responses without an external key
+- Icons: Lucide React
+
+REQUIRED ROUTES
+- / — dashboard home with feature overview and quick actions
+- /email — Smart Email Generator
+- /meetings — Meeting Notes Summarizer
+- /tasks — AI Task Planner
+- /research — AI Research Assistant
+- /chat — AI Chatbot Interface
+
+Each route must define its own head() with a unique title, description, og:title, and og:description. Use a shared sidebar layout in src/routes/__root.tsx around <Outlet />.
+
+REQUIRED FEATURES
+
+1. Smart Email Generator (/email)
+   - Inputs: recipient, purpose/goal, key points (textarea), tone selector (Professional / Friendly / Urgent)
+   - Output: generated email with subject line and body
+   - Actions: regenerate, edit inline, copy to clipboard, clear form
+   - UX: loading state, empty state, error state, toast confirmation on copy
+
+2. Meeting Notes Summarizer (/meetings)
+   - Input: raw meeting notes textarea
+   - Output sections: concise summary, key decisions, action items with owners, extracted deadlines
+   - Actions: copy individual sections or full result, clear form
+   - UX: structured cards for each output section
+
+3. AI Task Planner (/tasks)
+   - Input: goal or project description, available hours per day, deadline (optional)
+   - Output: prioritized task list with suggested schedule, estimated time per task, ordering
+   - Actions: copy plan, mark tasks complete (local state), regenerate
+
+4. AI Research Assistant (/research)
+   - Input: research topic or question
+   - Output: key insights (3-5 bullet points), concise summary, follow-up recommendations
+   - Actions: copy insights, save/export as text, clear
+
+5. AI Chatbot Interface (/chat)
+   - Persistent sidebar chat or dedicated page
+   - Input: message textarea with send button
+   - Output: assistant messages in a scrollable thread
+   - Actions: new chat, copy last response, suggested starter prompts
+   - UX: typing/loading indicator, empty state with example prompts
+
+DESIGN & UX REQUIREMENTS
+- Modern SaaS dashboard with a collapsible sidebar navigation
+- Responsive: full desktop layout, mobile drawer menu, touch-friendly inputs
+- Use Tailwind semantic tokens; never hardcode arbitrary hex colors in components
+- Typography: clean sans-serif, readable hierarchy
+- Components: cards, buttons, form inputs, select dropdowns, textareas, toasts, modals/drawers
+- Loading, empty, and error states for every AI-powered feature
+- Smooth transitions and hover states
+- Copy-to-clipboard feedback via Sonner toast notifications
+- Responsible AI disclaimer visible on AI outputs
+
+SERVER FUNCTIONS & AI INTEGRATION
+- Create demo server functions under src/lib/ (e.g., email.functions.ts) using createServerFn
+- Demo mode: generate plausible, context-aware responses based on user input without calling an API
+- Provide structured prompt templates in comments so a real LLM can later replace the mocks
+- Include a visible note: "This is a demo using simulated AI responses. Connect your API key for live AI."
+- Keep prompts non-harmful, professional, and productivity-focused
+
+ACCESSIBILITY & QUALITY
+- WCAG-compliant contrast ratios
+- Keyboard-navigable forms and buttons
+- ARIA labels where needed
+- Input validation (required fields, max length hints)
+- No dead links or placeholder-only pages
+
+DELIVERABLES
+- src/routes/*.tsx for every route listed above
+- src/routes/__root.tsx with shared sidebar/header layout
+- src/lib/*.functions.ts for demo AI server functions
+- src/components/ui/* for reusable UI components
+- src/styles.css with Tailwind v4 theme tokens
+- README.md with setup instructions and feature list
+
+NON-GOALS
+- Do not build real authentication, payment, or persistent backend storage
+- Do not store data persistently beyond the session
+- Do not use copyrighted assets or generic stock imagery without alt text
+
+SUCCESS CRITERIA
+- All five features are functional and visually polished
+- The app looks professional on desktop and mobile
+- Demo AI outputs are relevant and useful
+- Code is readable, well-commented, and easy to extend with a real API later
