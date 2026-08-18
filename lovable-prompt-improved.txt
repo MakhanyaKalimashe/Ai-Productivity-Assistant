@@ -1,0 +1,86 @@
+Build "Workmate AI" — a professional, responsive productivity dashboard that helps knowledge workers draft emails, summarize meetings, plan tasks, research topics, and chat with an AI assistant. Treat this as a full-stack SaaS application, not just a landing page.
+
+CORE PRODUCT
+- App name: Workmate AI
+- Tagline: "Your AI-powered work companion"
+- Audience: professionals, freelancers, team leads
+- Tone: clean, trustworthy, efficient, modern SaaS
+
+REQUIRED FEATURES (all must be implemented as working UI, not placeholders)
+
+1. Smart Email Generator
+   - Inputs: recipient, purpose/goal, key points (textarea), tone selector (Professional / Friendly / Urgent)
+   - Output: generated email with subject line and body
+   - Actions: regenerate, edit inline, copy to clipboard, clear form
+   - UX: loading state, empty state, error state, toast confirmation on copy
+
+2. Meeting Notes Summarizer
+   - Input: raw meeting notes textarea
+   - Output sections: concise summary, key decisions, action items with owners, extracted deadlines
+   - Actions: copy individual sections or full result, clear form
+   - UX: structured cards for each output section
+
+3. AI Task Planner
+   - Input: goal or project description, available hours per day, deadline (optional)
+   - Output: prioritized task list with suggested schedule, estimated time per task, ordering
+   - Actions: copy plan, mark tasks complete (local state), regenerate
+
+4. AI Research Assistant
+   - Input: research topic or question
+   - Output: key insights (3-5 bullet points), concise summary, follow-up recommendations
+   - Actions: copy insights, save/export as text, clear
+
+5. AI Chatbot Interface
+   - Persistent sidebar chat or dedicated page
+   - Input: message textarea with send button
+   - Output: assistant messages in a scrollable thread
+   - Actions: new chat, copy last response, suggested starter prompts
+   - UX: typing/loading indicator, empty state with example prompts
+
+DESIGN & UX REQUIREMENTS
+- Modern SaaS dashboard with a collapsible sidebar navigation
+- Responsive: full desktop layout, mobile drawer menu, touch-friendly inputs
+- Color palette: professional, accessible, dark-mode ready (use CSS variables / Tailwind theme tokens)
+- Typography: clean sans-serif, readable hierarchy
+- Components: cards, buttons, form inputs, select dropdowns, textareas, toasts, modals/drawers
+- Loading, empty, and error states for every AI-powered feature
+- Smooth transitions and hover states
+- Copy-to-clipboard feedback via toast notifications
+- Responsible AI disclaimer visible on AI outputs
+
+TECH STACK
+- Single-page application using vanilla HTML, CSS, and JavaScript (no external frameworks)
+- Or, if building in Lovable: React + Tailwind CSS + shadcn/ui components
+- Local-first state; no backend required for the demo
+- AI responses should work offline using realistic demo/mock outputs
+
+AI INTEGRATION
+- Provide structured prompt templates for each feature so a real LLM can later replace the mocks
+- Demo mode: generate plausible, context-aware responses based on user input without calling an API
+- Include a visible note: "This is a demo using simulated AI responses. Connect your API key for live AI."
+- Keep prompts non-harmful, professional, and productivity-focused
+
+ACCESSIBILITY & QUALITY
+- WCAG-compliant contrast ratios
+- Keyboard-navigable forms and buttons
+- ARIA labels where needed
+- Input validation (required fields, max length hints)
+- No dead links or placeholder-only pages
+
+DELIVERABLES
+- index.html as the main entry point
+- styles.css for all styling
+- app.js for all logic
+- README.md with setup instructions and feature list
+- lovable-prompt.txt summarizing the build request
+
+NON-GOALS
+- Do not build a real backend, authentication, or payment flow
+- Do not store data persistently beyond the session
+- Do not use copyrighted assets or generic stock imagery without alt text
+
+SUCCESS CRITERIA
+- All five features are functional and visually polished
+- The app looks professional on desktop and mobile
+- Demo AI outputs are relevant and useful
+- Code is readable, well-commented, and easy to extend with a real API later
