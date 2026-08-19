@@ -102,13 +102,14 @@ function Landing() {
           alt="A human hand and a robotic hand reaching toward each other over a glowing blue data landscape"
           width={1920}
           height={720}
-          className="absolute inset-0 size-full object-cover"
+          className="absolute inset-0 size-full object-cover object-[72%_center] lg:object-center"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/20"
+          className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/55 to-background lg:bg-gradient-to-r lg:from-background lg:via-background/80 lg:to-background/20"
           aria-hidden
         />
-        <div className="relative mx-auto flex min-h-[34rem] max-w-6xl flex-col justify-center px-4 py-32 sm:px-6 lg:min-h-[42rem]">
+        <div className="relative mx-auto flex min-h-[30rem] max-w-6xl flex-col justify-center px-4 py-24 sm:px-6 sm:py-28 lg:min-h-[42rem] lg:py-32">
+
           <p className="text-xs font-medium uppercase tracking-[0.28em] text-primary">
             Human + Machine
           </p>
@@ -182,7 +183,7 @@ function Landing() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
-        <div className="overflow-hidden rounded-3xl bg-hero-gradient p-10 text-primary-foreground shadow-soft sm:p-14">
+        <div className="overflow-hidden rounded-3xl bg-hero-gradient p-10 text-sidebar-foreground shadow-soft sm:p-14">
           <h2 className="max-w-xl font-display text-2xl font-semibold sm:text-3xl">
             Start with one email. Keep the whole day.
           </h2>
